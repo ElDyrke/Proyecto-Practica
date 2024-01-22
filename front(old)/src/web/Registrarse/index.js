@@ -1,0 +1,1 @@
+export { default as Registrarse } from "./Registrarse/Registrarse"
