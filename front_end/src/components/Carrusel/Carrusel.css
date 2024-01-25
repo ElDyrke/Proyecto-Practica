@@ -1,0 +1,84 @@
+.carousel-inner {
+    height: 100vh;
+    height: 100svh;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    img {
+        object-fit: cover;
+        height: 100svh;
+    }
+}
+
+.carousel-item {
+    transition: 1s;
+    img {
+        height: 100svh;
+    }
+}
+
+.carrusel {
+    container: inline-size;
+    color: #ffffff;
+    letter-spacing: 0px;
+    padding-block-end: 3rem;
+    text-shadow: rgba(0, 0, 0, 0.412) 3px 0px 2px;
+}
+
+.titulo-carrusel {
+    container-type: inline-size;
+    width: 80%;
+    position: absolute;
+    bottom: 60%;
+    height: 20%;
+    left: 10%;
+    animation: fade-in 1s;
+    h1{
+        font-weight: 900;
+        font-size: clamp(50px, 8vh, 150px);
+    }
+}
+
+
+.texto-carrusel {
+    container-type: inline-size;
+    z-index: 10;
+    width: 70%;
+    position: absolute;
+    bottom: 22%;
+    height: 30%;
+    left: 10%;
+    animation: fade-in-td 1s;
+    p {
+        font-weight: 600;
+        font-size: clamp(30px, 5vh, 70px);
+    }
+    a{
+        font-size: clamp(20px, 5vh, 60px);
+        border-width: 0.2rem;
+        border-radius: 0;
+        font-weight: 600;
+        text-shadow: rgba(0, 0, 0, 0.25) 3px 0px 2px;
+    }
+    a:hover{
+        text-shadow: none;
+    }
+}
+
+@keyframes fade-in {
+    0%{
+        left: -10%;
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-td {
+    0%{
+        bottom: 55%;
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}

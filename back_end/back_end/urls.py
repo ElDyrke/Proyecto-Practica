@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from rest_framework.urlpatterns import format_suffix_patterns
+import api.views as v
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('login/', v.LoginView.as_view()),
+    path('registrar/', v.CreateUserView.as_view()),
+    path('usuario/', v.ManageUserView.as_view()),
+    path('destinos/', v.DestinosGeneral.as_view()),
+    path('destinos/<int:pk>/', v.DestinoDetalle.as_view()),
+    path('etiquetas/', v.EtiquetasGeneral.as_view())
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

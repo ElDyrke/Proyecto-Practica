@@ -7,6 +7,8 @@ from .managers import ManagerUsuario
 
 class Usuario(AbstractUser, PermissionsMixin):
     email = models.EmailField(_("email address"), unique=True)
+    nombre = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
@@ -16,13 +18,28 @@ class Usuario(AbstractUser, PermissionsMixin):
 
     objects = ManagerUsuario()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.email
+
+class Etiqueta(models.Model):
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self) -> str:
+        return self.nombre
+
     
+def upload_to(instance, filename):
+    return 'images/{filename}'.format(filename=filename)
+
 class Destino(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=255)
+    imagen =  models.ImageField(upload_to=upload_to, null=False, blank=True)
+    etiquetas = models.ManyToManyField(Etiqueta, null=False, blank=True)
     # PENDIENTE: Añadir ubicacion
+
+    def __str__(self) -> str:
+        return self.nombre
     
 class Viaje(models.Model):
     nombre = models.CharField("nombre Tour", max_length=50)

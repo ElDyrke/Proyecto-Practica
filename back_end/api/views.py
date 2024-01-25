@@ -2,18 +2,18 @@
 from django.contrib.auth import login
 
 # rest_framework imports
-from rest_framework import generics, authentication, permissions
+from rest_framework import generics, mixins, authentication, permissions
 from rest_framework.settings import api_settings
 from rest_framework.authtoken.serializers import AuthTokenSerializer
+from rest_framework.parsers import MultiPartParser, FormParser
 
 # knox imports
 from knox.views import LoginView as KnoxLoginView
 from knox.auth import TokenAuthentication
 
-# local apps import
-from .serializers import UserSerializer, AuthSerializer
-
-from rest_framework.authentication import SessionAuthentication
+# imports locales
+from .serializers import *
+from .models import *
 
 
 
@@ -40,3 +40,45 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         return self.request.user
+    
+class DestinosGeneral(mixins.ListModelMixin,
+                  mixins.CreateModelMixin,
+                  generics.GenericAPIView):
+    queryset = Destino.objects.all()
+    serializer_class = DestinoSerializer
+    parser_classes = (MultiPartParser, FormParser)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+    
+class DestinoDetalle(mixins.RetrieveModelMixin,
+                    mixins.UpdateModelMixin,
+                    mixins.DestroyModelMixin,
+                    generics.GenericAPIView):
+    queryset = Destino.objects.all()
+    serializer_class = DestinoSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+    
+class EtiquetasGeneral(mixins.ListModelMixin,
+                  mixins.CreateModelMixin,
+                  generics.GenericAPIView):
+    queryset = Etiqueta.objects.all()
+    serializer_class = EtiquetaSerializer
+    parser_classes = (MultiPartParser, FormParser)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)

@@ -1,0 +1,1 @@
+export { default as Form_Registro } from "./Form_Registro/Form_Registro"

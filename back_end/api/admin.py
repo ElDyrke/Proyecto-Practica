@@ -34,5 +34,6 @@ admin.site.register(Usuario , CustomUserAdmin)
 admin.site.register(Destino)
 admin.site.register(Viaje)
 admin.site.register(ItemItinerario)
+admin.site.register(Etiqueta)
 
 

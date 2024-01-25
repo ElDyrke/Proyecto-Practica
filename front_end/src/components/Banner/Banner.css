@@ -1,0 +1,9 @@
+.banner .carousel-inner {
+    scroll-snap-align: start;
+    height: 30vh !important;
+    background-color: #08540c;
+}
+
+.banner .carousel-item img {
+    object-fit: cover;
+}
