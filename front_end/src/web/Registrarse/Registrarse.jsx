@@ -3,7 +3,7 @@ import "./Registrarse.css"
 import "../Iniciar_sesion/Iniciar_sesion.css"
 import "../../App.css"
 import landscape from '../../assets/img/landscape1.jpg'
-import { Form_Registro, Navegacion } from '../../components'
+import { Form_Registro, Navegacion, Footer } from '../../components'
 
 const Registrarse = (props) => {
   return (
@@ -13,6 +13,7 @@ const Registrarse = (props) => {
       <div className="img-container row col-6-lg"><img src={landscape} alt="Paisaje de Turquia" /></div>
       <Form_Registro className="row col-6-lg"/>
     </div>
+    <Footer/>
     </>
   )
 }

@@ -25,10 +25,10 @@ const Navegacion = () => {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link className='pe-4' href="/#Inicio">Inicio</Nav.Link>
-              <Nav.Link className='pe-4' href="/#Nosotros">Nosotros</Nav.Link>
-              <Nav.Link className='pe-4' href="/#Viajes">Viajes</Nav.Link>
-              <Nav.Link className='pe-4' href="/Iniciar-sesion">Iniciar Sesión</Nav.Link>
+              <Nav.Link className='px-2' href="/#Inicio">Inicio</Nav.Link>
+              <Nav.Link className='px-2' href="/#Nosotros">Nosotros</Nav.Link>
+              <Nav.Link className='px-2' href="/#Viajes">Viajes</Nav.Link>
+              <Nav.Link className='px-2' href="/Iniciar-sesion">Iniciar Sesión</Nav.Link>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

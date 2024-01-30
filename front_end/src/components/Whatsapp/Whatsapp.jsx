@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Whatsapp.css"
-import { Unstable_Popup as BasePopup } from '@mui/base/Unstable_Popup';
 
 
 const Whatsapp = (props) => {
@@ -17,9 +16,31 @@ const Whatsapp = (props) => {
       }
     }
   }
+  
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+
+    const handleScroll = () => {
+      clearTimeout(timeout);
+      setIsScrolling(true);
+
+      timeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 500); // Adjust the delay (in milliseconds) to your preference
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div id="anchor" className='Whatsapp'>
+    <div id="anchor" className={`Whatsapp ${isScrolling? '' : 'fade-out'}`}>
       <a href={texto} target='blank'><i class="bi-whatsapp"></i></a>
     </div>
   )

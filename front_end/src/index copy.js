@@ -8,15 +8,10 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import {Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
 import {Viaje} from './components/index.js'
 import {
-  BrowserRouter,
   createBrowserRouter,
-  Route,
   RouterProvider,
-  Routes,
 } from "react-router-dom";
 import "./index.css";
-import Inicio from "./web/Inicio/Inicio.jsx";
-import Destino from "./web/Destino/Destino.jsx";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,37 +21,40 @@ const queryClient = new QueryClient({
   },
 })
 
+const data = async () => {
+  let coso = destinosApi.get("/").then(response => response.data)
+  return coso
+}
+const paths = [{
+    path: "/",
+    element: <App/>,
+  },{
+    path: "/Iniciar-sesion",
+    element: <Iniciar_sesion/>,
+  },{
+    path: "/Registrarse",
+    element: <Registrarse/>
+  },{
+    path: "/Terminos-y-Condiciones",
+    element: <TerminosYcondiciones/>
+  },
+]
 
-// const paths = [{
-//     path: "/",
-//     element: <Inicio/>,
-//   },{
-//     path: "/Iniciar-sesion",
-//     element: <Iniciar_sesion/>,
-//   },{
-//     path: "/Registrarse",
-//     element: <Registrarse/>
-//   },{
-//     path: "/Terminos-y-Condiciones",
-//     element: <TerminosYcondiciones/>
-//   },{
-//     path: "/Destino/:id",
-//     element: <Destino />
-//   }
-// ]
+const routes =
+  data.map((item) => ({
+    path: `/items/${item.id}`,
+    element: <ItemComponent item={item} />,
+  }));
+
+
+
+console.log(paths.push(routes))
+const router = createBrowserRouter(paths);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Inicio/>}/>
-          <Route path="/Iniciar-sesion" element={<Iniciar_sesion/>}/>
-          <Route path="/Registrarse" element={<Registrarse/>}/>
-          <Route path="/Terminos-y-Condiciones" element={<TerminosYcondiciones/>}/>
-          <Route path="/Destino/:id" element={<Destino />}/>
-        </Routes>
-      </BrowserRouter>
+      <RouterProvider router={router} />
       <ReactQueryDevtools position="bottom-right" />
     </QueryClientProvider>
   </React.StrictMode>

@@ -12,16 +12,23 @@
     color: var(--verde-principal) !important;
     transition: 0.2s;
 }
-.navbar, .offcanvas a:hover{
-    color: var(--verde-oscuro) !important;
+.navbar a:hover, .offcanvas a:hover{
+    background-color: #f5f5f5 !important;
 }
-.nav-item a:focus{
-    color: var(--verde-oscuro) !important;
+
+.offcanvas-title {
+    color: var(--cafe)
+}
+
+.offcanvas a{
+    padding-inline: 500px;
+    margin-inline: 0.2em;
+    border-radius: 1em;
+
 }
 
 .navbar-brand {
-    margin: 0;
-    padding: 0;
+    margin: -1rem;
     img {
         height: 100%;
         width: clamp(80px, 5rem, 270px);

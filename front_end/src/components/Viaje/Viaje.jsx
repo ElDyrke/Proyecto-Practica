@@ -10,13 +10,15 @@ const Viaje = (props) => {
     <>
     <Container className='col-auto col-md-6'>
       <Card>
-        <Card.Img variant="top" src={imagen} />
+        <a href={props.href}>
+          <Card.Img variant="top" src={imagen} />
         <Card.ImgOverlay>
         <Card.Title as={'h3'}>{props.titulo}</Card.Title>
         <div className='underline'></div>
         </Card.ImgOverlay>
+      </a>
         <Card.Body>
-          <Card.Text>
+          <Card.Text className='parrafo'>
             {props.descripcion}
           </Card.Text>
         </Card.Body>

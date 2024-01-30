@@ -1,6 +1,5 @@
 .card {
     background-color: rgb(243, 243, 243);
-    width: 90%;
     box-shadow: 0.5rem 0.5rem 1rem #00000038;
     text-align: center;
     margin: 5% 2rem;
@@ -9,11 +8,11 @@
 }
 
 .card:hover {
-   width: 100%;
+  transform: scale(1.02);
 }
 
 .card-img-overlay{
-    top: 3%;
+    top: -0.8em;
     color: white;
     .underline {
         border-top: 1px solid white;
@@ -22,6 +21,17 @@
     }
 }
 
-.card-body{
-    font-size: clamp(20px, 3vh, 40px)
+.card-text {
+    color: black;
+    text-decoration: none;
+    > *{
+        text-decoration: none;
+    }
 }
+
+.card-title {
+    font-size: 35px;
+    letter-spacing: -0.04em;
+    text-shadow: rgba(0, 0, 0, 0.412) 3px 0px 2px;
+}
+

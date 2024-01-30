@@ -27,23 +27,23 @@ const Despliegue_Viajes = (props) => {
     <div className="Despliegue_Viajes row" style={{width: "100%", overflow: "hidden"}}>
       <div className="header">
         <h3>All-Inclusive</h3>
-        <p className='text-muted'>Reserva aquí nuestros planes todo incluido y cruza el oceano en busca de nuevas experiencias</p>
+        <p className='text-muted parrafo'>Cruza el oceano en busca de nuevas experiencias</p>
       </div>
       {
         data.map((d, i) => {
           if (!(d.etiquetas.includes(1))){
-            return (<Viaje img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
+            return (<Viaje href={`/Destino/${d.id}`} img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
           }
         })
       }
       <div className='header'>
         <h3>Patagonia</h3>
-        <p className='text-muted'>Explora con nosotros los paisajes del fin del mundo</p>
+        <p className='text-muted parrafo'>Explora con nosotros los paisajes del fin del mundo</p>
       </div>
       {
         data.map((d, i) => {
           if ((d.etiquetas.includes(1))){
-            return (<Viaje img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
+            return (<Viaje href={`/Destino/${d.id}`} img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
           }
         })
       }
