@@ -29,9 +29,6 @@ const Carrusel = (props) => {
                 <p className='h2'>
                     Eco-turismo aventura al alcance de tu mano
                 </p>
-                <a href='#' className="btn btn-outline-light btn-lg">
-                    Reserva Ya!
-                </a>
         </div>
     </section>
   )

@@ -1,4 +1,8 @@
 .Despliegue_Viajes {
+    .destinos {
+        display: flex;
+        flex-flow: row wrap;
+    }
     .header {
         padding: 1rem;
         margin: 1rem auto;
@@ -6,10 +10,18 @@
         box-shadow: 0.5rem 0.5rem 1rem -0.5rem #ccc;
         > h3 {
             letter-spacing: -0.05rem;
-            padding: 0 1rem;
+            padding: 0;
             color: var(--verde-claro);
             font-weight: 700;
             font-size: clamp(50px, 5vh, 75px);
+        }
+        > h4 {
+            letter-spacing: -0.05rem;
+            padding: 0;
+            margin: -0.5rem;
+            color: var(--cafe);
+            font-weight: 700;
+            font-size: clamp(35px, 5vh, 45px);
         }
         > p {
             text-align: center;

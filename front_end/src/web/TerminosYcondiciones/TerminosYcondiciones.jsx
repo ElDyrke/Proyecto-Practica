@@ -4,6 +4,11 @@ import { Footer, Navegacion } from '../../components'
 import "./TerminosYcondiciones.css"
 
 const TerminosYcondiciones = (props) => {
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return Object.entries(images);
+  }
   return (
     <>
     <Navegacion/>
@@ -99,7 +104,7 @@ const TerminosYcondiciones = (props) => {
         </div>
       </div>
     </div>
-    <Footer/>
+    <Footer import={importAll}/>
     </>
   )
 }

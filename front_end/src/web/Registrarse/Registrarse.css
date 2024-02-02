@@ -1,0 +1,27 @@
+.Iniciar_sesion {
+    margin-top: 10svh;
+    display: flex;
+    flex-direction: column;
+    justify-items: stretch;
+    .img-container {
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: auto;
+            align-self: center;
+            transform: rotate(4deg) scale(1.1);
+        }
+    }
+    #Formulario {
+        align-self: center;
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px)  { 
+    .Iniciar_sesion {
+        flex-direction: row;
+    }
+ }

@@ -2,14 +2,15 @@
 .navbar {
     container: inline-size;
     height: 10vh;
-    font-size: clamp(18px, 3cqi, 22px);
+    font-size: clamp(18px, 1.2vw, 36px);
     background-color: hsl(0, 0%, 100%) !important;
     opacity: 0.9;
 }
 
 
 .nav,.offcanvas a{
-    color: var(--verde-principal) !important;
+    color: var(--verde-claro) !important;
+    font-weight: 600;
     transition: 0.2s;
 }
 .navbar a:hover, .offcanvas a:hover{

@@ -14,19 +14,23 @@ function Inicio() {
   const datos_usuario = {"first_name": 'Nombre', "last_name": 'Apellido', "email": "email@coso.cl"}
   return (
     <>
-    <Navegacion/>
-    <div id="Inicio">
-      <Carrusel import={importAll}/>
-    </div>
-      <Banner import={importAll}/>
-    <div id="Nosotros">
-      <Nosotros import={importAll}/>
-    </div>
-    <div id="Viajes">
-      <Despliegue_Viajes destinos={destinos}/>
-    </div>
+    <header><Navegacion/></header>
+    <main>
+      <div id="Inicio">
+        <Carrusel import={importAll}/>
+      </div>
+        <Banner import={importAll}/>
+      <div id="Nosotros">
+        <Nosotros import={importAll} lang={'es'}/>
+      </div>
+      <div id="Viajes">
+        <Despliegue_Viajes destinos={destinos}/>
+      </div>
+    </main>
       <Whatsapp text="Hola, tengo una consulta." usuario={datos_usuario}/>
-      <Footer/>
+    <footer>
+      <Footer import={importAll}/>
+    </footer>
     </>
   );
 }

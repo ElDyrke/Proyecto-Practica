@@ -5,6 +5,11 @@ import landscape from '../../assets/img/landscape1.jpg'
 import { Form_usuario, Navegacion, Footer } from '../../components'
 
 const Iniciar_sesion = (props) => {
+  function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return Object.entries(images);
+  }
   return (
     <>
     <Navegacion/>
@@ -12,7 +17,7 @@ const Iniciar_sesion = (props) => {
       <div className="img-container row col-6-lg"><img src={landscape} alt="Paisaje de Turquia" /></div>
       <Form_usuario className="row col-6-lg"/>
     </div>
-    <Footer/>
+    <Footer import={importAll}/>
     </>
   )
 }
