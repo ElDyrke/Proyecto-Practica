@@ -9,6 +9,7 @@ class Usuario(AbstractUser, PermissionsMixin):
     email = models.EmailField(_("email address"), unique=True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
+    username = models.CharField(max_length=100, unique=False, null=True, default=None)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     date_joined = models.DateTimeField(default=timezone.now)
@@ -26,7 +27,32 @@ class Etiqueta(models.Model):
 
     def __str__(self) -> str:
         return self.nombre
+    
+def guardar_viajes(instance, filename):
+    return 'images/viajes/{filename}'.format(filename=filename)
 
+class Viaje(models.Model):
+    nombre = models.CharField(max_length=50)
+    descripcion = models.TextField()
+    fecha_inicio = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
+    imagen =  models.ImageField(upload_to=guardar_viajes, null=False, blank=True)
+    precio = models.IntegerField(null=True, blank=True)
+    incluye = models.TextField()
+    no_incluye = models.TextField(null=True, blank=True)
+    cupos = models.IntegerField(null=True, blank=True)
+
+    def __str__(self) -> str:
+        return f"{self.nombre} {self.fecha_inicio}"
+
+def guardar_hoteles(instance, filename):
+    return 'images/hoteles/{filename}'.format(filename=filename)
+
+class Hotel(models.Model):
+    nombre = models.CharField(max_length=50)
+    imagen =  models.ImageField(upload_to=guardar_hoteles, null=False, blank=True)
+    tour = models.ForeignKey(Viaje, on_delete=models.CASCADE)
+    def __str__(self) -> str:
+        return f"{self.nombre}"
     
 def upload_to(instance, filename):
     return 'images/{filename}'.format(filename=filename)
@@ -35,31 +61,29 @@ class Destino(models.Model):
     nombre = models.CharField(max_length=50)
     descripcion = models.CharField(max_length=255)
     imagen =  models.ImageField(upload_to=upload_to, null=False, blank=True)
-    etiquetas = models.ManyToManyField(Etiqueta, null=False, blank=True)
+    etiquetas = models.ManyToManyField(Etiqueta)
+    viajes = models.ManyToManyField(Viaje, verbose_name=_("tour(s)"))
     # PENDIENTE: Añadir ubicacion
 
     def __str__(self) -> str:
         return self.nombre
     
-class Viaje(models.Model):
-    nombre = models.CharField("nombre Tour", max_length=50)
-    fecha_inicio = models.DateField("fecha de inicio", auto_now=False, auto_now_add=False)
-    precio = models.IntegerField()
-    destinos = models.ManyToManyField(Destino, verbose_name="destino(s)")
-
-    def __str__(self) -> str:
-        return f"{self.nombre} - {self.fecha_inicio}"
 
     
 class ItemItinerario(models.Model):
-    dia = models.CharField("dia(s)", max_length=20)
-    descripcion = models.CharField(max_length=250)
-    sumario = models.CharField("descripcion corta", max_length=50)
+    dia = models.IntegerField()
+    descripcion = models.TextField()
+    sumario = models.CharField(max_length=80)
     viaje = models.ForeignKey(Viaje, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"Día {self.dia} - {self.viaje}"
     
+class Reserva(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    tour = models.ForeignKey(Viaje, on_delete=models.CASCADE)
+    fecha_pago = models.DateField(auto_now=True)
+    recibo = models.URLField(max_length=300)
 
 
 

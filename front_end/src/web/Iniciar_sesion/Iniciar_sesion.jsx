@@ -14,7 +14,7 @@ const Iniciar_sesion = (props) => {
     <>
     <Navegacion/>
     <div className='Iniciar_sesion'>
-      <div className="img-container row col-6-lg"><img src={landscape} alt="Paisaje de Turquia" /></div>
+      <div className="img-container row col-2-lg"><img src={landscape} alt="Paisaje de Turquia" /></div>
       <Form_usuario className="row col-6-lg"/>
     </div>
     <Footer import={importAll}/>

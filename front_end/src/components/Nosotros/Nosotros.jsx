@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Nosotros.css"
 import logo from "../../assets/logos/logo austral verde.png"
+import ImagenOpcional from '../ImagenOpcional/ImagenOpcional';
 
 const Nosotros = (props) => {
     const images = props.import(require.context(`../../assets/logos`, false, /\Verde.(png|jpe?g|svg)$/));
@@ -23,9 +24,9 @@ const Nosotros = (props) => {
             </div>
         </div>
         <div className='imagenes mt-3'>
-            <img className='img-big' src="https://placehold.co/600x400/png" alt="" />
-            <img className='img-smol' src="https://placehold.co/600x400/png" alt="" />
-            <img className='img-smol' src="https://placehold.co/600x400/png" alt="" />
+            <ImagenOpcional className="img-big"/>
+            <ImagenOpcional className="img-smol"/>
+            <ImagenOpcional className="img-smol"/>
         </div>
     </section>
   )

@@ -1,0 +1,47 @@
+.destino-presentacion {
+    .img-wrap {
+        padding: 2rem 1.2rem;
+        container-type: inline-size;
+        width: clamp(30vw, 100vw);
+    }
+    .destino-imagen {
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-height: 90vh;
+        transform: rotate(4deg);
+    }
+    .img-wrap::before{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0.5rem;
+        left: -1.2rem;
+        background-color: #bbb;
+        box-shadow: 0 0 1rem #bbb;
+        width: 100cqi;
+        height: 80%;
+        max-height: 90vh;
+        margin: 2rem;
+    }
+    .destino-descripcion {
+        margin: 1rem;
+        padding-left: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 912px) {
+    .destino-presentacion {
+        display: grid;
+        grid-template-columns: repeat(1fr, 4);
+    }
+    .img-wrap{
+        grid-column: 1/2;
+        width: clamp(800px, 70vw, 1260px);
+    }
+    .destino-descripcion{
+        grid-column: 3/4;
+        align-self: center;
+    }
+}

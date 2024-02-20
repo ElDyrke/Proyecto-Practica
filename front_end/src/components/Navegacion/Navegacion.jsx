@@ -28,7 +28,7 @@ const Navegacion = () => {
               <Nav.Link className='px-2' href="/#Inicio">Inicio</Nav.Link>
               <Nav.Link className='px-2' href="/#Nosotros">Nosotros</Nav.Link>
               <Nav.Link className='px-2' href="/#Viajes">Viajes</Nav.Link>
-              <Nav.Link className='px-2' href="/Iniciar-sesion">Iniciar Sesión</Nav.Link>
+              {/* <Nav.Link className='px-2' href="/Iniciar-sesion">Iniciar Sesión</Nav.Link> */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

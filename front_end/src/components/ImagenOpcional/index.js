@@ -1,0 +1,1 @@
+export { default as ImagenOpcional } from "./ImagenOpcional/ImagenOpcional"

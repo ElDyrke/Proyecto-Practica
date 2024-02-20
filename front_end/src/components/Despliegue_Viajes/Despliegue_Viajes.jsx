@@ -2,7 +2,7 @@ import React from 'react'
 import "./Despliegue_Viajes.css"
 import { useQuery } from '@tanstack/react-query'
 import { destinosApi } from '../../api/apiAustral';
-import {Viaje} from '../index'
+import {Header, Viaje} from '../index'
 import axios from 'axios';
 
 const Despliegue_Viajes = (props) => {
@@ -25,24 +25,7 @@ const Despliegue_Viajes = (props) => {
 
   return (
     <div className="Despliegue_Viajes" style={{width: "100%", overflow: "hidden"}}>
-      <div className="header" tabIndex={0}>
-        <h3>All-Inclusive</h3>
-        <p className='text-muted parrafo'>Cruza el oceano en busca de nuevas experiencias</p>
-      </div>
-      <div className="destinos">
-        {
-          data.map((d, i) => {
-            if ((d.etiquetas.includes(2))){
-              return (<Viaje href={`/Destino/${d.id}`} img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
-            }
-          })
-        }
-      </div>
-      <div className='header' tabIndex={0}>
-        <h4>Torres del Paine</h4>
-        <h3>Patagonia Chilena</h3>
-        <p className='text-muted parrafo'>Explora con nosotros los paisajes del fin del mundo, saliendo desde:</p>
-      </div>
+      <Header texto={"All-Inclusive"} foot={"Cruza el oceano en busca de nuevas experiencias"}/>
       <div className="destinos">
         {
           data.map((d, i) => {
@@ -52,14 +35,21 @@ const Despliegue_Viajes = (props) => {
           })
         }
       </div>
-      <div className="header" tabIndex={0}>
-        <h3>Tours al Extranjero</h3>
-        <p className='text-muted parrafo'>No te pierdas estas oportunidades especiales</p>
-      </div>
+      <Header subtitulo="Torres del Paine" texto="Patagonia Chilena" foot="Explora con nosotros los paisajes del fin del mundo, saliendo desde:"/>
       <div className="destinos">
         {
           data.map((d, i) => {
-            if (!(d.etiquetas.includes(1)) && !d.etiquetas.includes(2)){
+            if ((d.etiquetas.includes(3))){
+              return (<Viaje href={`/Destino/${d.id}`} img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
+            }
+          })
+        }
+      </div>
+      <Header texto="Tours al Extranjero" foot="No te pierdas estas oportunidades especiales"/>
+      <div className="destinos">
+        {
+          data.map((d, i) => {
+            if (d.etiquetas.includes(2)){
               return (<Viaje href={`/Destino/${d.id}`} img={d.imagen} titulo={d.nombre} descripcion={d.descripcion} />)
             }
           })

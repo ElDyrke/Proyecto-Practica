@@ -3,16 +3,17 @@ const LOCAL = "http://127.0.0.1:8000/"
 const baseURL = LOCAL
 
 //----Usuarios--
-const login = axios.create({baseURL: baseURL + 'login'})
-const registro = axios.create({baseURL: baseURL + 'registrar'})
-const usuario = axios.create({baseURL: baseURL + 'usuario'})
-
-export const GetUsuario = (id) => usuario.get(`/${id}`)
-export const Login = (datos) => login.post('/', datos)
-export const Registrar = (datos) => registro.post('/', datos)
+export const login = axios.create({baseURL: baseURL + 'login'})
+export const registro = axios.create({baseURL: baseURL + 'registrar'})
+export const usuario = axios.create({baseURL: baseURL + 'usuario'})
 
 //----Destinos--
 export const destinosApi = axios.create({baseURL: baseURL + 'destinos'}) 
 
+//----Tours--
+export const viajesApi = axios.create({baseURL: baseURL + 'viajes_destino'})
+
+//---Hoteles---
+export const hotelesTour = axios.create({baseURL: baseURL + 'hoteles_viaje'})
 
 //TODO: ...

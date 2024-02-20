@@ -1,7 +1,7 @@
 .Whatsapp {
     z-index: 99;
     text-align: center;
-    position: sticky;
+    position: fixed;
     left: 1rem;
     bottom: 1rem;
     width: 5rem;

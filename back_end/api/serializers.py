@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import  authenticate
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from drf_extra_fields.fields import Base64ImageField
 from .models import *
 
 User = get_user_model()
@@ -39,16 +38,17 @@ class AuthSerializer(serializers.Serializer):
 
         attrs['user'] = user
         return 
-    
-class DestinoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Destino
-        fields = "__all__"
 
 class ViajeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Viaje
         fields = "__all__"
+    
+class DestinoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Destino
+        fields = ['id', 'nombre', 'descripcion', 'imagen', 'etiquetas', 'viajes']
+
 
 class ItemItinerarioSerializer(serializers.ModelSerializer):
     class Meta:
@@ -58,4 +58,14 @@ class ItemItinerarioSerializer(serializers.ModelSerializer):
 class EtiquetaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Etiqueta
+        fields = "__all__"
+
+class ReservaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reserva
+        fields = "__all__"
+
+class HotelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hotel
         fields = "__all__"

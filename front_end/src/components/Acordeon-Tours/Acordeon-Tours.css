@@ -1,0 +1,18 @@
+
+.accordion-body{
+    
+    margin: 1em;
+    padding: 0;
+    overflow-x: hidden;
+    
+}
+
+.accordion-button{
+    background-color: hsl(0, 0%, 93%) !important;
+    border: none;
+}
+
+.accordion-button.collapsed{
+    background-color: white !important;
+    border: none;
+}

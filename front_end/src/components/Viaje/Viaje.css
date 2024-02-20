@@ -1,6 +1,12 @@
+.container {
+    flex: 1 1;
+    max-width: 80vw;
+    min-width: 300px;
+}
+
 .card {
     background-color: rgb(243, 243, 243);
-    box-shadow: 0.5rem 0.5rem 1rem #00000038;
+    box-shadow: 0rem 0rem 1.2rem -0.5rem #0e0e0e40;
     text-align: center;
     margin: 5% 1rem;
     margin-bottom: 1rem;

@@ -1,0 +1,1 @@
+export { default as AcordeonTours } from "./Acordeon-Tours/Acordeon-Tours"
