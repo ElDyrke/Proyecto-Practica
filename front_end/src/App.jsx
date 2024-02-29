@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {destinosApi} from './api/apiAustral.js'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import {Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
+import { Inicio, Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -55,21 +55,21 @@ function App() {
     [
       {
         path: "/",
-        element: <App/>,
+        element: <Inicio/>,
       },{
         path: "/Iniciar-sesion",
         element: <Iniciar_sesion/>,
       },{
         path: "/Registrarse",
         element: <Registrarse/>
-    },{
-      path: "/Terminos-y-Condiciones",
-      element: <TerminosYcondiciones/>
-    },{
-      path: "/Destino/:id",
-      element: <Viaje/>
-    }
-  ]
+      },{
+        path: "/Terminos-y-Condiciones",
+        element: <TerminosYcondiciones/>
+      },{
+        path: "/Destino/:id",
+        element: <Viaje/>
+      }
+    ]
   )
   console.log(router)
 

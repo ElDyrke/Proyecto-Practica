@@ -1,0 +1,46 @@
+.Itinerario {
+    align-self: center;
+    place-self: center;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+    overflow: scroll;
+    .accordion {
+        background-color: #e5e5e5;
+        color: var(--verde-principal);
+        border-radius: 5rem;
+        margin-bottom: 1em;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        text-align: left;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+      }
+      
+    .active, .accordion:hover {
+        background-color: #ccc;
+      }
+      
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+    }
+
+    .accordion:after {
+        content: '\002B'; /* Unicode character for "plus" sign (+) */
+        font-size: 30px;
+        font-weight: 700;
+        margin: -0.4em;
+        float: right;
+        margin-inline: 5px;
+        }
+    
+    .active:after {
+        content: "\002D"; /* Unicode character for "minus" sign (-) */
+        }
+}

@@ -4,7 +4,7 @@ import logo from "../../assets/logos/logo austral verde.png"
 import ImagenOpcional from '../ImagenOpcional/ImagenOpcional';
 
 const Nosotros = (props) => {
-    const images = props.import(require.context(`../../assets/logos`, false, /\Verde.(png|jpe?g|svg)$/));
+    const images = props.import(require.context(`../../assets/nosotros`, false, /\.(png|jpe?g|svg)$/i));
 
   return (
     <section className="nosotros">
@@ -24,7 +24,7 @@ const Nosotros = (props) => {
             </div>
         </div>
         <div className='imagenes mt-3'>
-            <ImagenOpcional className="img-big"/>
+            <ImagenOpcional className="img-big" src={images[0]}/>
             <ImagenOpcional className="img-smol"/>
             <ImagenOpcional className="img-smol"/>
         </div>
@@ -33,7 +33,7 @@ const Nosotros = (props) => {
 }
 
 const TextoNosotros = (props) => {
-    if (props.lang == 'en'){
+    if (props.lang === 'en'){
         return (
             <div className="mt-2">
             <p className="mx-2">We are an ecotourism-oriented company, and as such, we have a strong focus on offering the experience of travel while also helping to preserve the flora, fauna and culture of the territories we explore.</p>
@@ -41,7 +41,7 @@ const TextoNosotros = (props) => {
         </div>
         )
     }
-    if (props.lang == 'es'){
+    if (props.lang === 'es'){
         return (
             <div className="mt-2">
             <p className="mx-2">Somos una empresa de ecoturismo, y como tal, nos enfocamos tanto en ofrecer la experiencia de viajar como en conservar la flora, fauna y cultura de los territorios explorados.</p>
@@ -58,12 +58,12 @@ const TextoNosotros = (props) => {
 }
 
 const TituloNosotros = (props) => {
-    if (props.lang == 'es'){
+    if (props.lang === 'es'){
         return (
             <h2 className='titulo'>¿Quienes sómos?</h2>
         )
     }
-    if (props.lang == 'en'){
+    if (props.lang === 'en'){
         return (
             <h2 className='titulo'>Who are we?</h2>
         )

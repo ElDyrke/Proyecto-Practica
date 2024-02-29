@@ -1,0 +1,60 @@
+.cargando {
+    margin: 5em;
+    text-align: center;
+    color: #08540c;
+}
+
+.animation-wrap {
+    position: relative;
+    margin: 0.5em auto;
+    padding: 0;
+    width: fit-content;
+    text-align: center;
+    > * {
+        width: 1em;
+        font-size: 4em;
+    }
+}
+
+#tierra {
+    margin: auto;
+}
+
+#avioncito {
+    position: absolute;
+    left: -4px;
+    top: calc(100% - 1rem);
+    width: 0.2em;
+    animation-name: volar;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    color: #12a11a;
+}
+
+@keyframes volar {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    55% {
+        opacity: 1;
+    }
+    
+    60%, 100% {
+        width: 0.2em;
+        left: calc(100% - 0.8rem);
+        top: 0.5rem;
+        opacity: 0;
+    }
+
+}

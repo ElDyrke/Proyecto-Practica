@@ -63,7 +63,7 @@ TEMPLATES = [
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "Austral",
+        "NAME": "austral",
         "USER": "root",
         "PASSWORD": "",
     }

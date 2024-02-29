@@ -4,8 +4,15 @@
         flex-flow: row wrap;
         place-items: center center;
         > * {
-            max-width: 80vw;
+            max-width: 30vw;
             margin: auto;
         }
+    }
+}
+
+@media screen and (min-width: 912px) {
+    .extranjero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }

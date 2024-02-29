@@ -2,7 +2,7 @@
     .img-wrap {
         padding: 2rem 1.2rem;
         container-type: inline-size;
-        width: clamp(30vw, 100vw);
+        width: clamp(30vw, 100%);
     }
     .destino-imagen {
         position: relative;

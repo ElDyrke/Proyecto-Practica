@@ -1,21 +1,19 @@
 .hoteles {
-    align-self: baseline;
+   width: 100%;
 }
 
-.hoteles-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    min-height: 200px;
-    > div {
-        flex: 1 1;
-        min-width: 300px;
+.swiper {
+    max-width: 675px;
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: scale-down;
+    }
+    
+}
 
-        img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+@media screen and (min-width: 912px) {
+    .hoteles {
+        grid-column: 2 / 4;
     }
 }

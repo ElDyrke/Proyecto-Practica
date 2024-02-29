@@ -37,7 +37,11 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_object(self):
-        return self.request.user
+        if (self.request.user.is_authenticated):
+            return self.request.user
+        else:
+            raise serializers.ValidationError('usuario no autenticado', code='authentication')
+
     
 # DESTINO
 class DestinosGeneral(mixins.ListModelMixin,

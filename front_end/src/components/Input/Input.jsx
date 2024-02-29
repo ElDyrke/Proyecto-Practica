@@ -2,10 +2,10 @@ import React from 'react'
 import {Form} from 'react-bootstrap'
 import "./Input.css"
 
-const Input = (props) => {
+const Input = ({controlId, type, name, placeholder, value, handler}) => {
   return (
-    <Form.Group className="mb-3" controlId={props.controlId}>
-      <Form.Control type={props.type} placeholder={props.placeholder} />
+    <Form.Group className="mb-3" controlId={controlId}>
+      <Form.Control type={type} name={name} placeholder={placeholder} value={value} onChange={handler}/>
     </Form.Group>
   )
 }

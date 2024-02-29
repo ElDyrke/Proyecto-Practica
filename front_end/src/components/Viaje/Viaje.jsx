@@ -8,7 +8,7 @@ const Viaje = (props) => {
 
   return (
     <>
-    <Container className='col-auto col-md-6'>
+    <Container className='viaje-wrap col-auto col-md-6'>
       <Card>
         <a href={props.href}>
           <Card.Img variant="top" src={imagen} />
@@ -17,11 +17,6 @@ const Viaje = (props) => {
         <div className='underline'></div>
         </Card.ImgOverlay>
       </a>
-        <Card.Body>
-          <Card.Text className='parrafo'>
-            {props.descripcion}
-          </Card.Text>
-        </Card.Body>
       </Card>
     </Container>
     

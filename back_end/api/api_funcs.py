@@ -16,6 +16,12 @@ def viajesPorDestinoId(request, id):
 def hotelesPorViajeId(request, id):
     tour = Viaje.objects.filter(id = id).first()
     hoteles = Hotel.objects.filter(tour = tour)
-    print(hoteles)
     serializer = HotelSerializer(hoteles, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(http_method_names=['GET'])
+def getItinerario(request, id):
+    tour = Viaje.objects.filter(id = id).first()
+    itinerario = ItemItinerario.objects.filter(viaje = tour)
+    serializer = ItemItinerarioSerializer(itinerario, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)

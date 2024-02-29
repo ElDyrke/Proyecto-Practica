@@ -1,14 +1,21 @@
 .container {
-    margin: 0;
+    margin: auto;
     padding: 0;
     overflow-x: hidden;
-    width: 100%;
+    width: 95%;
 }
 
 .incluye {
+    margin: auto;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    max-width: 675px;
     list-style-type: none;
     li{
         display: flex;
+        margin: auto;
+        text-align: center;
     }
     .bi{
         width: 1em;
@@ -16,13 +23,17 @@
         margin: 0 0.5em;
         text-align: center;
         justify-self: center;
-        color: var(--verde-principal);
         font-size: 18px;
+    }
+    .bi-check-lg {
+        color: var(--verde-principal);
+    }
+    .bi-x-lg {
+        color: red;
     }
 }   
 
 .descripcion-tour {
-    max-height: 45vh;
     max-width: 675px;
     padding: 1em;
     overflow: scroll;
@@ -44,7 +55,7 @@
     i{
         width: 1em;
         height: 1em;
-        margin: auto;
+        margin: 0.5em auto;
         text-align: center;
         justify-self: center;
         color: var(--verde-principal);
@@ -64,19 +75,34 @@
 
 @media screen and (min-width: 912px) {
     .container.tour {
-        display: grid;
-        column-gap: 1em;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-flow: row wrap;
+        /* column-gap: 1em;
+        grid-template-columns: repeat(3, 1fr); */
+        > * {
+            flex: 1 1 40%;
+        }
     }
 
+
     .descripcion-tour {
+        flex: 1 1 675px;
         justify-self: start;
-        align-self: flex-start;
-        max-height: 100%;
+        align-self: center;
         padding: 2em;
         max-width: 675px;
         > p{
             margin-bottom: 0.5em;
+            line-height: 1.5em;
+        }
+    }
+
+    .Itinerario {
+        max-height: 650px;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        > * {
+            scroll-snap-align: start;
         }
     }
 }

@@ -41,4 +41,5 @@ urlpatterns = [
     path('hotel/<int:pk>/', v.HotelsDetalle.as_view()),
     path('hoteles_viaje/<int:id>', f.hotelesPorViajeId),
     path('viajes_destino/<int:id>', f.viajesPorDestinoId),
+    path('itinerario/<int:id>', f.getItinerario),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

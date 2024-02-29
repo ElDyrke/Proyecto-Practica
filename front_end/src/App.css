@@ -3,6 +3,7 @@ body {
   --verde-principal: #175B1E;
   --verde-claro: #57AF1C;
   --cafe: #C38922;
+  background-color: #175b1e0e;
 }
 
 .parrafo {
@@ -16,7 +17,7 @@ body {
 .titulo {
   letter-spacing: -0.05rem;
   padding: 0 1rem;
-  color: var(--verde-claro);
+  color: var(--verde-principal);
   font-weight: 700;
   font-size: clamp(40px, 5vw, 75px);
 }

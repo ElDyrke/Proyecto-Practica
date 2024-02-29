@@ -1,12 +1,12 @@
 .header {
-    padding: 1rem;
+    padding: 0.7rem;
     margin: 1rem auto;
     text-align: center;
     box-shadow: 0.5rem 0.5rem 1rem -0.5rem #ccc;
     > h3 {
         letter-spacing: -0.06rem;
         padding: 0;
-        color: var(--verde-claro);
+        color: var(--verde-principal);
         font-weight: 700;
         font-size: clamp(50px, 5vh, 75px);
     }

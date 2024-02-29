@@ -50,6 +50,7 @@ def guardar_hoteles(instance, filename):
 class Hotel(models.Model):
     nombre = models.CharField(max_length=50)
     imagen =  models.ImageField(upload_to=guardar_hoteles, null=False, blank=True)
+    imagen_habitacion =  models.ImageField(upload_to=guardar_hoteles, null=False, blank=True)
     tour = models.ForeignKey(Viaje, on_delete=models.CASCADE)
     def __str__(self) -> str:
         return f"{self.nombre}"
