@@ -1,0 +1,50 @@
+.error-wrap {
+    text-align: center;
+    img {
+        width: 40%;
+        height: auto;
+        font-size: 1em;
+        margin: auto;
+    }
+    .hiker-wrap {
+        position: relative;
+    }
+    .bi {
+        position: absolute;
+        top: -0.5em;
+        right: calc(50% - 1em);
+        width: 1em;
+        font-size: 10em;
+        color: var(--verde-principal);
+    }
+    .texto-error{
+        padding: 2em;
+    }
+
+    #logo-austral {
+        margin: auto;
+        img {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (min-width: 912px) {
+    .error-wrap{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 15em);
+
+        .hiker-wrap {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .texto-error{
+            grid-column: 1 / 3 ;
+            text-align: center !important;
+        }
+        #logo-austral {
+            grid-row: 2;
+        }
+    }
+}

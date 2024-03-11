@@ -1,15 +1,18 @@
 .viaje-wrap {
     flex: 1 1;
+    padding: 0.1rem !important;
     max-width: 80vw;
-    min-width: 300px;
-    transition: 0.2s;
-    
+    margin: 0;
+    min-width: 50%;
+    transition: 0.2s ease-in;
+     
     .card {
         background-color: rgb(243, 243, 243);
         box-shadow: 0rem 0rem 1.2rem -0.3rem var(--verde-oscuro) ;
         border: 3px solid var(--verde-principal);
+        padding: 0;
         text-align: center;
-        margin: 5% 1rem;
+        margin: 1rem 0.5rem;
         margin-bottom: 1rem;
         transition: 0.2s;
         border-radius: 0.7rem;

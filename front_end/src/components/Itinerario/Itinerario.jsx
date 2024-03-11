@@ -2,6 +2,7 @@ import React from 'react'
 import "./Itinerario.css"
 import { itinerario } from '../../api/apiAustral'
 import { useQuery } from '@tanstack/react-query'
+import Cargando from '../Cargando/Cargando'
 
 const Itinerario = ({id}) => {
   const {isLoading, isError, error, data} = useQuery({
@@ -14,7 +15,7 @@ const Itinerario = ({id}) => {
   })
   
   if (isLoading) {
-    return (<span>Cargando...</span>)
+    return <Cargando/>
   }
 
   if (isError) {

@@ -9,7 +9,7 @@
 
 
 .nav,.offcanvas a{
-    color: var(--verde-claro) !important;
+    color: var(--verde-oscuro) !important;
     font-weight: 600;
     transition: 0.2s;
 }

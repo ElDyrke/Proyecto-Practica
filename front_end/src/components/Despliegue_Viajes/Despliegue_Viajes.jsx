@@ -25,7 +25,7 @@ const Despliegue_Viajes = (props) => {
 
   return (
     <div className="Despliegue_Viajes" style={{width: "100%", overflow: "hidden"}}>
-      <Header texto={"Destinos en el Extranjero"} foot={"Cruza el oceano en busca de nuevas experiencias"}/>
+      <Header texto={"Viaja fuera de Chile"} foot={"Cruza el oceano en busca de nuevas experiencias"}/>
       <div className='extranjero'>
         <div>
           <Header subtitulo={'All-Inclusive'} foot={'Opciones todo incluido'}/>

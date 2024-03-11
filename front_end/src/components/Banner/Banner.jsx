@@ -3,7 +3,7 @@ import "./Banner.css";
 import {Carousel} from "react-bootstrap";
 
 const Banner = (props) => {
-    const images = props.import(require.context(`../../assets/carrusel`, false, /\.(png|jpe?g|svg)$/));
+    const images = props.import(require.context(`../../assets/banner`, false, /\.(png|jpe?g|svg)$/i));
       
   return (
     <section className="banner">

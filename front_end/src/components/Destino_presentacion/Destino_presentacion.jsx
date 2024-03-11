@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Destino_presentacion.css"
-import {AcordeonTours, Header, ImagenOpcional, Slider_Tours, UnTour} from "../index"
+import {AcordeonTours, Cargando, Header, ImagenOpcional, Slider_Tours, UnTour} from "../index"
 import { destinosApi } from '../../api/apiAustral'
 import { useQuery } from '@tanstack/react-query'
 
@@ -9,10 +9,11 @@ const Destino_presentacion = (props) => {
     queryKey: ['destino', props.id],
     queryFn: async () => {
       const {data} = await destinosApi.get(`/${props.id}/`)
+      console.log(data)
       return data
     }} )
   if (isLoading){
-    return (<div>Cargando</div>)
+    return (<Cargando/>)
   }
 
   if (isError){
@@ -23,7 +24,7 @@ const Destino_presentacion = (props) => {
       <Header texto={data.nombre}/>
     <section className="destino-presentacion">
       <div className='img-wrap'>
-        <ImagenOpcional imagen={data.imagen} alt={data.nombre} className="destino-imagen overflow-hidden" />
+        <ImagenOpcional imagen={data.imagen} baseUrl='' alt={data.nombre} className="destino-imagen overflow-hidden" />
       </div>
       <div className='destino-descripcion parrafo'>
         <p>{data.descripcion}</p>

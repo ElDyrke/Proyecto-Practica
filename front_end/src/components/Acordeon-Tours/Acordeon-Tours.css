@@ -1,9 +1,10 @@
+.accordion-item {
+    background-color: #175b1e0e;
+}
 
 .accordion-body{
-    
     margin: 1em;
-    padding: 0;
-    overflow-x: hidden;
+    padding: 0; 
     
 }
 

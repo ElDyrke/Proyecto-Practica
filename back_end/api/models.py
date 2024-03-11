@@ -36,6 +36,7 @@ class Viaje(models.Model):
     descripcion = models.TextField()
     fecha_inicio = models.DateField(auto_now=False, auto_now_add=False, null=True, blank=True)
     imagen =  models.ImageField(upload_to=guardar_viajes, null=False, blank=True)
+    link_pago = models.URLField(null=True, blank=True)
     precio = models.IntegerField(null=True, blank=True)
     incluye = models.TextField()
     no_incluye = models.TextField(null=True, blank=True)
@@ -68,8 +69,6 @@ class Destino(models.Model):
 
     def __str__(self) -> str:
         return self.nombre
-    
-
     
 class ItemItinerario(models.Model):
     dia = models.IntegerField()

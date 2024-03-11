@@ -1,0 +1,23 @@
+Hay partes del código que no se acabaron usando si hay algo que no está
+vinculado a ninguna otra parte del proyecto es por eso
+
+En el front end el archivo principal es index.js, desde ahí se hace el routing y el resto de cosas
+App.jsx no hace efectivamente nada es un archivo residual de cuando estaba descubriendo como hacer
+el routing
+
+Dentro de front-end hay 4 carpetas:
+    api: Los archivos de conexion a la api, dentro del unico archivo hay una variable "baseURL" 
+    que en produccion hay que cambiar a la direccion que corresponda
+
+    assets: Aqui estan las imagenes locales, iconos svg, etc.
+
+    components: Los componentes de react, cada uno con su archivo .jsx y .cosas
+    ademas aqui hay 2 arhivos de indice para hacer barrel export, no recuerdo porque hay 2 honestamente
+
+    web: aqui estan los elementos finales que estan dedicados a las paginas del proyecto
+
+Notas sobre el Back-end
+    la configuracion de Django esta en DEBUG = True y no esta preparado para produccion
+    para ver una checklist de produccion corre el comando: python.exe manage.py check --deploy
+    link a la documentacion.
+    https://docs.djangoproject.com/en/5.0/howto/deployment/

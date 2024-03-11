@@ -3,27 +3,42 @@ import "./UnTour.css"
 import ImagenOpcional from '../ImagenOpcional/ImagenOpcional';
 import DisplayHoteles from '../DisplayHoteles/DisplayHoteles';
 import Itinerario from '../Itinerario/Itinerario';
+import web_pago from '../../assets/btn-flow-negro.png'
 
-const UnTour = (props) => {
-  const tour = props.tour
+const UnTour = ({tour}) => {
   const descripcion = tour.descripcion.split('\n')
-  console.log(descripcion)
+  console.log(tour.imagen)
   const incluido = tour.incluye === "" ? [] : tour.incluye.trim().split(';')
   const no_incluido = tour.no_incluye === "" ? [] : tour.no_incluye.trim().split(';')
+
+  // if (tour.fecha_inicio){
+  //   let fecha = new Date(tour.fecha_inicio)
+  //   let diferenciaMs = fecha.getTime() - Date.now().getTime()
+
+  //   const diferenciaDias = Math.round(diferenciaMs / (1000 * 3600 * 24));
+  // }
   
   // TODO: Ver el tema de las reservas
-  // TODO: Distribuir correctamente en el espacio cuando faltan elementos - LISTO, CREO
   return (
     <>
     <div className="container tour">
-      <div style={{"width":"100%"}}>
-        <ImagenOpcional imagen={tour.imagen} alt={tour.nombre} className={'w-100'}/>
+      <div>
+        <ImagenOpcional imagen={tour.imagen} alt={tour.nombre} className={'imagen-tour'}/>
         <ul className="info parrafo">
           <Info tour={tour}/>
         </ul>
       </div>
 
       <div className="descripcion-tour">
+        {
+          tour.link_pago ?
+          <>
+            <a href={tour.link_pago} target="_blank" className='boton-pago' rel="noopener noreferrer">
+            <img src={web_pago} alt="Botón pago flow" />
+            </a>
+          </>
+          : null
+        }
         {descripcion.map((text, i) => (<p className='parrafo'>{text}</p>))}
       </div>
 
@@ -41,6 +56,7 @@ const UnTour = (props) => {
             </ul>
           </div>
         : null}
+        
         {no_incluido.length > 0 ?
           <div>
             <h3 className='titulo text-center mb-3 mt-5'>No Incluye</h3>

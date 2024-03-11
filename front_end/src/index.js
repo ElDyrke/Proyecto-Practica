@@ -1,15 +1,11 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import reportWebVitals from './reportWebVitals.js'
-import App from './App.jsx'
-import {destinosApi} from './api/apiAustral.js'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import {Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
-import {Viaje} from './components/index.js'
+import {Contacto, ErrorPage, Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
+import hiker from "./assets/hiker.svg"
 import {
   BrowserRouter,
-  createBrowserRouter,
   Route,
   RouterProvider,
   Routes,
@@ -55,9 +51,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/Registrarse" element={<Registrarse/>}/>
           <Route path="/Terminos-y-Condiciones" element={<TerminosYcondiciones/>}/>
           <Route path="/Destino/:id" element={<Destino />}/>
+          <Route path="*" element={<ErrorPage/>}/>
+          <Route path="/Contacto" element={<Contacto/>} 
+          action={async ({ params, request }) => {
+          let formData = await request.formData();
+          console.log(formData);
+          }}
+        />
         </Routes>
       </BrowserRouter>
-      <ReactQueryDevtools position="bottom-right" />
     </QueryClientProvider>
   </React.StrictMode>
 );

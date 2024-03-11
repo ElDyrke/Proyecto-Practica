@@ -20,7 +20,7 @@ function Inicio() {
       <div id="Inicio">
         <Carrusel import={importAll}/>
       </div>
-        <Banner import={importAll}/>
+        {/* <Banner import={importAll}/> */}
       <div id="Nosotros">
         <Nosotros import={importAll} lang={'es'}/>
       </div>

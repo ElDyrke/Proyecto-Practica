@@ -3,6 +3,7 @@ import "./Acordeon-Tours.css"
 import Accordion from 'react-bootstrap/Accordion';
 import { viajesApi } from '../../api/apiAustral'
 import { useQuery } from '@tanstack/react-query'
+import Cargando from '../Cargando/Cargando';
 
 
 const AcordeonTours = ({destinoId, renderContent, getHeader}) => {
@@ -14,7 +15,7 @@ const AcordeonTours = ({destinoId, renderContent, getHeader}) => {
     }} )
 
   if (isLoading){
-    return (<div>Cargando</div>)
+    return <Cargando/>
   }
 
   if (isError){

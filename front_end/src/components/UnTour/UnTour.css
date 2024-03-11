@@ -1,8 +1,28 @@
-.container {
+.container.tour {
     margin: auto;
-    padding: 0;
-    overflow-x: hidden;
+    padding-block: 1.5em;
     width: 95%;
+}
+
+.boton-pago {
+    display: flex;
+    align-items: center;
+    img {
+        max-width: 200px;
+        width: 30%;
+        height: auto;
+        margin: auto;
+    }
+}
+
+.img-warp {
+    width: 80%;
+}
+
+.imagen-tour {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 .incluye {

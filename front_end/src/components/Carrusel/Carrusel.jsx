@@ -3,7 +3,7 @@ import "./Carrusel.css";
 import {Carousel} from "react-bootstrap";
 
 const Carrusel = (props) => {
-    const images = props.import(require.context('../../assets/carrusel', false, /\.(png|jpe?g|svg)$/));
+    const images = props.import(require.context('../../assets/carrusel', false, /\.(png|jpe?g|svg)$/i));
 
 
   return (

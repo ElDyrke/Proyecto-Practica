@@ -5,6 +5,7 @@ import ImagenOpcional from '../ImagenOpcional/ImagenOpcional';
 
 const Nosotros = (props) => {
     const images = props.import(require.context(`../../assets/nosotros`, false, /\.(png|jpe?g|svg)$/i));
+    console.log(images[0][1])
 
   return (
     <section className="nosotros">
@@ -24,8 +25,8 @@ const Nosotros = (props) => {
             </div>
         </div>
         <div className='imagenes mt-3'>
-            <ImagenOpcional className="img-big" src={images[0]}/>
-            <ImagenOpcional className="img-smol"/>
+            <ImagenOpcional className="img-big" imagen={images[0][1]} baseUrl=''/>
+            <ImagenOpcional className="img-smol" imagen={images[1][1]} baseUrl=''/>
             <ImagenOpcional className="img-smol"/>
         </div>
     </section>

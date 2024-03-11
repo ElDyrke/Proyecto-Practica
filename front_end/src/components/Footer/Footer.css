@@ -37,7 +37,7 @@
         transition: 0.3s;
     }
     i:hover {
-        color: black;
+        color: var(--verde-oscuro);
     }
 }
 

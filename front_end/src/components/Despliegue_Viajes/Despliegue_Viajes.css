@@ -2,10 +2,10 @@
     .destinos {
         display: flex;
         flex-flow: row wrap;
-        place-items: center center;
+        place-items: center;
         > * {
-            max-width: 30vw;
             margin: auto;
+            flex: 0 1;
         }
     }
 }

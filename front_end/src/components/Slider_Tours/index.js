@@ -1,1 +1,0 @@
-export { default as Slider_Tours } from "./Slider_Tours/Slider_Tours"

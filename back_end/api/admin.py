@@ -36,5 +36,6 @@ admin.site.register(Viaje)
 admin.site.register(ItemItinerario)
 admin.site.register(Etiqueta)
 admin.site.register(Reserva)
+admin.site.register(Hotel)
 
 

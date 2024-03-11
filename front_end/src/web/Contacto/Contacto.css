@@ -1,0 +1,12 @@
+.form-contacto {
+    display: grid;
+    .form-control {
+        min-height: 3em;
+    }
+    .nombre {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2rem;
+    }
+
+}

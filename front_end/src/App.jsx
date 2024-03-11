@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {destinosApi} from './api/apiAustral.js'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Inicio, Iniciar_sesion, Registrarse, TerminosYcondiciones} from './web/index.js'
 import {
   createBrowserRouter,
@@ -9,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import { Viaje } from "./components/index.js";
+import hiker from "./assets/hiker.svg"
 
 function App() {
 
@@ -56,6 +55,7 @@ function App() {
       {
         path: "/",
         element: <Inicio/>,
+        errorElement: <ErrorPage />
       },{
         path: "/Iniciar-sesion",
         element: <Iniciar_sesion/>,
@@ -70,16 +70,24 @@ function App() {
         element: <Viaje/>
       }
     ]
-  )
-  console.log(router)
-
+  );
 
   return (
     <>
     <RouterProvider router={router} />
-    <ReactQueryDevtools position="bottom-right" />
     </>
   );
+}
+
+const ErrorPage = (props) => {
+  return (
+    <>
+    <img src={hiker} alt="" srcset="" />
+    <div><p>error</p>
+    </div>
+    </>
+    
+  )
 }
 
 export default App
